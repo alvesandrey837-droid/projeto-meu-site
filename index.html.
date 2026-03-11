@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<title>Uma Pergunta Especial ❤️</title>
+
+<style>
+body{
+font-family: Arial;
+text-align:center;
+background:linear-gradient(135deg,#ff758c,#ff7eb3);
+color:white;
+padding-top:80px;
+}
+
+.box{
+background:rgba(0,0,0,0.2);
+padding:40px;
+border-radius:20px;
+width:80%;
+max-width:400px;
+margin:auto;
+}
+
+button{
+padding:12px 25px;
+margin:10px;
+border:none;
+border-radius:10px;
+font-size:16px;
+cursor:pointer;
+}
+
+.sim{
+background:white;
+color:#ff4f7b;
+}
+
+.nao{
+background:#222;
+color:white;
+}
+</style>
+
+<script>
+function verificarSenha(){
+var senha = document.getElementById("senha").value;
+
+if(senha === "1234"){
+document.getElementById("login").style.display="none";
+document.getElementById("conteudo").style.display="block";
+}else{
+alert("Senha errada ❤️");
+}
+}
+
+function responder(resposta){
+
+var numero = "5511999999999"; 
+var mensagem = "Minha resposta é: " + resposta;
+
+var url = "https://wa.me/"+numero+"?text="+encodeURIComponent(mensagem);
+
+window.location.href = url;
+}
+</script>
+
+</head>
+
+<body>
+
+<div id="login" class="box">
+<h2>🔒 Área secreta</h2>
+<p>Digite a senha</p>
+
+<input type="password" id="senha" placeholder="Senha">
+<br><br>
+
+<button onclick="verificarSenha()">Entrar</button>
+</div>
+
+<div id="conteudo" class="box" style="display:none;">
+<h2>Tenho uma pergunta ❤️</h2>
+
+<p>Você quer continuar sendo o amor da minha vida?</p>
+
+<button class="sim" onclick="responder('SIM ❤️')">Sim</button>
+
+<button class="nao" onclick="responder('NÃO 😢')">Não</button>
+
+</div>
+
+</body>
+</html>
