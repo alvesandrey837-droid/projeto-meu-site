@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<title>Para Minha Namorada ❤️</title>
+
+<style>
+body{
+margin:0;
+font-family:Arial;
+background:linear-gradient(135deg,#ff758c,#ff7eb3);
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+color:white;
+overflow:hidden;
+}
+
+.box{
+background:rgba(0,0,0,0.3);
+padding:40px;
+border-radius:20px;
+max-width:500px;
+text-align:center;
+}
+
+button{
+padding:10px 20px;
+border:none;
+border-radius:10px;
+cursor:pointer;
+margin-top:15px;
+}
+
+.sim{
+background:white;
+color:#ff4f7b;
+}
+
+.nao{
+background:#222;
+color:white;
+}
+
+#pergunta{
+display:none;
+}
+
+#livro{
+display:none;
+}
+
+.heart{
+position:absolute;
+font-size:20px;
+animation:fall 5s linear infinite;
+}
+
+@keyframes fall{
+0%{transform:translateY(-10vh);}
+100%{transform:translateY(110vh);}
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- LOGIN -->
+<div id="login" class="box">
+<h2>🔒 Área secreta</h2>
+<p>Digite a senha</p>
+if(senha==="amor"){
+document.getElementById("login").style.display="none";
+document.getElementById("livro").style.display="block";
+escrever();
+}else{
+alert("Senha errada ❤️");
+<input type="password" id="senha">
+
+<br>
+
+<button onclick="entrar()">Entrar</button>
+</div>
+
+<!-- LIVRO -->
+<div id="livro" class="box">
+<h2>📖 Leia isso</h2>
+
+<p id="texto"></p>
+
+<button onclick="mostrarPergunta()">Terminei de ler ❤️</button>
+</div>
+
+<!-- PERGUNTA -->
+<div id="pergunta" class="box">
+<h2>Tenho uma pergunta ❤️</h2>
+
+<p>Você quer continuar sendo o amor da minha vida?</p>
+
+<button class="sim" onclick="responder('SIM ❤️')">Sim</button>
+
+<button class="nao" onclick="responder('NÃO 😢')">Não</button>
+</div>
+
+<script>
+
+
+
+}
+}
+
+const texto="Desde que você entrou na minha vida tudo ficou mais bonito. Seu sorriso ilumina meus dias e sua presença faz meu coração ficar em paz. Cada momento com você é especial para mim. Eu só quero continuar vivendo muitas histórias ao seu lado. Você é meu amor, minha felicidade e meu lugar favorito no mundo. ❤️";
+
+let i=0;
+
+function escrever(){
+if(i<texto.length){
+document.getElementById("texto").innerHTML+=texto.charAt(i);
+i++;
+setTimeout(escrever,30);
+}
+}
+
+function mostrarPergunta(){
+document.getElementById("livro").style.display="none";
+document.getElementById("pergunta").style.display="block";
+}
+
+function responder(resp){
+
+var numero="5511999999999"; 
+
+var mensagem="Minha resposta é: "+resp;
+
+var url="https://wa.me/"+numero+"?text="+encodeURIComponent(mensagem);
+
+window.location.href=url;
+
+}
+
+// corações
+function criarCoracao(){
+const heart=document.createElement("div");
+heart.className="heart";
+heart.innerHTML="❤️";
+heart.style.left=Math.random()*100+"vw";
+heart.style.fontSize=(Math.random()*20+10)+"px";
+document.body.appendChild(heart);
+setTimeout(()=>heart.remove(),5000);
+}
+
+setInterval(criarCoracao,300);
+
+</script>
+
+</body>
+</html>
